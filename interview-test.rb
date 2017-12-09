@@ -20,7 +20,6 @@ class Parser
       print_interviewee_identity(i)
     end
     print_interviewees_offices(interviewees)
-
   end
 
   def print_interviewee_identity(interviewee)

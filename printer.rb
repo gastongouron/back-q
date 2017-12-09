@@ -5,10 +5,15 @@ module Printer
   end
 
   def self.display_offices_informations(collection)
+    locations = display_offices_locations(collection)
+    display_employees_per_office(locations, collection)
+  end
+
+  def self.display_offices_locations(collection)
     locations = []
     collection.each {|i| locations.push(i.office) unless locations.include?(i.office)}
     puts "Offices are located in #{locations}"
-    display_employees_per_office(locations, collection)
+    locations
   end
 
   def self.display_employees_per_office(locations, collection)
