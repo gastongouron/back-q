@@ -4,8 +4,8 @@ class Interviewee
 
   def initialize(name, employee_id, office)
     @last_name, @first_name = name.split
-    @employee_id            = employee_id
-    @office                 = office
+    @employee_id            = employee_id.strip
+    @office                 = office.strip
   end
 
 end
