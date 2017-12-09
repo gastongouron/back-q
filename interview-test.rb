@@ -12,11 +12,23 @@ class Parser
   end
 
   def parse_csv file
+    interviewees = []
     CSV.foreach(file) do |row|
       name, employee_id, office = row.to_s.split(',').map {|m| m.gsub(/[^0-9a-z ]/i, '') }
       i = Interviewee.new(name, employee_id, office)
-      Printer.display(i)
+      interviewees.push(i)
+      print_interviewee_identity(i)
     end
+    print_interviewees_offices(interviewees)
+
+  end
+
+  def print_interviewee_identity(interviewee)
+    Printer.display_identity(interviewee)
+  end
+
+  def print_interviewees_offices(interviewees)
+    Printer.display_offices_informations(interviewees)
   end
 
 end
