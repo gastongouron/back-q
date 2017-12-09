@@ -22,14 +22,17 @@ class Parser
     print_interviewees_offices(interviewees)
   end
 
+  # part 1
   def print_interviewee_identity(interviewee)
     Printer.display_identity(interviewee)
   end
 
+  # part 2
   def print_interviewees_offices(interviewees)
     Printer.display_offices_informations(interviewees)
   end
 
 end
 
+# initialize with
 Parser.new('interview_users.csv')
